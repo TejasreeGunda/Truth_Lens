@@ -3,8 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import AppLayout from "@/components/AppLayout";
+import Dashboard from "./pages/Dashboard";
+import Analyzer from "./pages/Analyzer";
+import Analytics from "./pages/Analytics";
+import LearningHub from "./pages/LearningHub";
+import HistoryPage from "./pages/HistoryPage";
+import AlertsPage from "./pages/AlertsPage";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +21,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<AppLayout><Dashboard /></AppLayout>} />
+          <Route path="/analyzer" element={<AppLayout><Analyzer /></AppLayout>} />
+          <Route path="/analytics" element={<AppLayout><Analytics /></AppLayout>} />
+          <Route path="/learn" element={<AppLayout><LearningHub /></AppLayout>} />
+          <Route path="/history" element={<AppLayout><HistoryPage /></AppLayout>} />
+          <Route path="/alerts" element={<AppLayout><AlertsPage /></AppLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
