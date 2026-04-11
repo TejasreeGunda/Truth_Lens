@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GraduationCap, CheckCircle, XCircle, Trophy, ArrowRight, BookOpen, Brain } from "lucide-react";
+import { GraduationCap, CheckCircle, XCircle, Trophy, ArrowRight, BookOpen, Brain, ShieldCheck, ShieldAlert } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 
 const quizQuestions = [
