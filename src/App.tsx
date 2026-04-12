@@ -7,6 +7,7 @@ import AppLayout from "@/components/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Analyzer from "./pages/Analyzer";
 import Analytics from "./pages/Analytics";
+import ChartsPage from "./pages/ChartsPage";
 import LearningHub from "./pages/LearningHub";
 import HistoryPage from "./pages/HistoryPage";
 import AlertsPage from "./pages/AlertsPage";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<AppLayout><Dashboard /></AppLayout>} />
           <Route path="/analyzer" element={<AppLayout><Analyzer /></AppLayout>} />
           <Route path="/analytics" element={<AppLayout><Analytics /></AppLayout>} />
+          <Route path="/charts" element={<AppLayout><ChartsPage /></AppLayout>} />
           <Route path="/learn" element={<AppLayout><LearningHub /></AppLayout>} />
           <Route path="/history" element={<AppLayout><HistoryPage /></AppLayout>} />
           <Route path="/alerts" element={<AppLayout><AlertsPage /></AppLayout>} />
