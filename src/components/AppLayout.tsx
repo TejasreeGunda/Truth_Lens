@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, Search, BarChart3, GraduationCap, History,
-  Bell, Shield, ChevronLeft, ChevronRight, Zap
+  Bell, Shield, ChevronLeft, ChevronRight, Zap, LineChart
 } from "lucide-react";
 
 const navItems = [
   { path: "/", label: "Dashboard", icon: LayoutDashboard },
   { path: "/analyzer", label: "News Analyzer", icon: Search },
   { path: "/analytics", label: "Analytics", icon: BarChart3 },
+  { path: "/charts", label: "Charts", icon: LineChart },
   { path: "/learn", label: "Learning Hub", icon: GraduationCap },
   { path: "/history", label: "History", icon: History },
   { path: "/alerts", label: "Alerts", icon: Bell },

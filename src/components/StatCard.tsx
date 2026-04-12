@@ -1,9 +1,10 @@
+import { ReactNode } from "react";
 import GlassCard from "./GlassCard";
 import { LucideIcon } from "lucide-react";
 
 interface StatCardProps {
   label: string;
-  value: string;
+  value: string | ReactNode;
   change?: string;
   changeType?: "up" | "down";
   icon: LucideIcon;
@@ -13,7 +14,7 @@ interface StatCardProps {
 
 export default function StatCard({ label, value, change, changeType, icon: Icon, glow = "none", delay = 0 }: StatCardProps) {
   return (
-    <GlassCard glow={glow} delay={delay}>
+    <GlassCard glow={glow} delay={delay} className="hover:scale-[1.02] transition-transform duration-300">
       <div className="flex items-start justify-between">
         <div>
           <p className="text-sm text-muted-foreground">{label}</p>
@@ -24,7 +25,7 @@ export default function StatCard({ label, value, change, changeType, icon: Icon,
             </p>
           )}
         </div>
-        <div className={`p-2.5 rounded-lg ${glow === "primary" ? "gradient-bg" : glow === "accent" ? "gradient-bg-accent" : glow === "danger" ? "gradient-bg-danger" : "bg-secondary"}`}>
+        <div className={`p-2.5 rounded-lg transition-transform duration-300 hover:scale-110 ${glow === "primary" ? "gradient-bg" : glow === "accent" ? "gradient-bg-accent" : glow === "danger" ? "gradient-bg-danger" : "bg-secondary"}`}>
           <Icon className={`w-5 h-5 ${glow !== "none" ? "text-background" : "text-foreground"}`} />
         </div>
       </div>

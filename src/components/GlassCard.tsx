@@ -6,9 +6,10 @@ interface GlassCardProps {
   glow?: "primary" | "accent" | "danger" | "none";
   animate?: boolean;
   delay?: number;
+  onClick?: () => void;
 }
 
-export default function GlassCard({ children, className, glow = "none", animate = true, delay = 0 }: GlassCardProps) {
+export default function GlassCard({ children, className, glow = "none", animate = true, delay = 0, onClick }: GlassCardProps) {
   const glowClass = {
     primary: "glow",
     accent: "glow-accent",
@@ -18,13 +19,15 @@ export default function GlassCard({ children, className, glow = "none", animate 
 
   return (
     <div
+      onClick={onClick}
       className={cn(
-        "glass p-5 transition-all duration-300 hover:bg-card/70",
+        "glass p-5 transition-all duration-300 hover:bg-card/70 hover:border-primary/20",
         glowClass,
         animate && "opacity-0 animate-fade-in",
+        onClick && "cursor-pointer",
         className
       )}
-      style={animate ? { animationDelay: `${delay}ms` } : undefined}
+      style={animate ? { animationDelay: `${delay}ms`, animationFillMode: "forwards" } : undefined}
     >
       {children}
     </div>
