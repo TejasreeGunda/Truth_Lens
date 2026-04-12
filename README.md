@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+Truth Lens.
 
-TODO: Document your project here
+Learn the truth behind News!
